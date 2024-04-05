@@ -20,7 +20,6 @@ from app.views import *
 from . import views
 
 urlpatterns = [
-    re_path('findSum',FindSum.as_view(), name="findSum"),
     re_path('uploadpdf', UploadPdf.as_view(),name="upload"),
     re_path('search',SearchQuery.as_view(),name="search"),
     re_path('upload', Upload.as_view(), name = "upload"),

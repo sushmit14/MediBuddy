@@ -21,6 +21,9 @@ import re
 import torch
 from transformers import BertTokenizer, BertForTokenClassification
 from langchain.schema.output_parser import StrOutputParser
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 pytesseract.pytesseract.tesseract_cmd = "E:/Tesseract/tesseract.exe"
 
@@ -192,10 +195,10 @@ class NERFilter():
 
         return result
 
-
+api_key = os.getenv('OPENAI_API_KEY')
 class ParserModel():
     def __init__(self):
-        self.model = ChatOpenAI()
+        self.model = ChatOpenAI(api_key=api_key)
         self.functions = [
             convert_pydantic_to_openai_function(MedInfo),
             convert_pydantic_to_openai_function(PatientInfo),

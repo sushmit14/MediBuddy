@@ -34,18 +34,10 @@ import torch
 from transformers import BertTokenizer, BertForTokenClassification
 from utils import *
 import os 
+from dotenv import load_dotenv
+load_dotenv()
 
-os.environ['OPENAI_API_KEY'] = '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'
-'''
 
-file_path = "Report.pdf"
-doc = fitz.open(file_path)  # open document
-i=0
-for page in doc:
-    pix = page.get_pixmap()  # render page to an image
-    pix.save(f"page_{i}.png")
-    i+=1
-'''
 start_time_str = "07:00"
 end_time_str = "21:00"
 mid_time_str = "13:00"
@@ -129,7 +121,7 @@ def parsePrescription(R: Request):
     url = R.url
     # print(url)parsescription\P1.pdf
     print(url)
-    destination_path = 'parsescription/prescriptiondownload.pdf'
+    destination_path = 'parsecription/prescriptiondownload.pdf'
     download_pdf(url, destination_path)
     text = pdf_to_text(destination_path)
 

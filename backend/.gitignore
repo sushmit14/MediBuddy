@@ -8,3 +8,4 @@ Symptoms.txt
 /app/disease_10k
 /app/disease_40k
 /app/symptoms
+.env
