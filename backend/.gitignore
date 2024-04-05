@@ -1,0 +1,10 @@
+# dependencies
+Drug_Disease.txt
+db.sqlite3
+extracted_text.txt
+output10k.txt
+Symptoms.txt 
+/app/disease
+/app/disease_10k
+/app/disease_40k
+/app/symptoms
